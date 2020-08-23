@@ -1,0 +1,286 @@
+
+body, ul, li, h1, h2, a {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+header {
+    background-color: #48465c;
+    padding: 20px;
+    text-align: center;
+    position: fixed;  
+    width: 100%;
+    z-index: 1; 
+    top: 0;
+    left: 0;
+}
+
+header h1 {
+    color: white;
+    border: 3px solid white;
+    padding: 6px 12px;
+    display: inline-block;
+    border-radius: 36px;
+    font-weight: lighter;
+    
+}
+
+
+.banner {
+    position: relative;      
+}
+                            
+
+.banner > img {
+    width: 100%; 
+    
+}
+
+
+.banner .welcome {
+    background: #48465c;
+    color: white;
+    padding: 30px;
+    font-size: 55px;
+    border-radius: 70px;
+    position: absolute;
+    left: 0;
+    top: 30%;
+} 
+
+.banner h2 span {
+    font-size: 1.4em;
+}
+
+nav{
+    background: #F4F4F4;
+    padding: 20px;
+    position: sticky;
+    top: 90px; /* When we scroll down and the nav bar gets to 90px, the nav bar becomes sticky*/
+    z-index: 1;
+}
+
+nav ul {
+    white-space: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+nav li {
+width: 25%;
+display: inline-block;
+font-size: 24px;
+}
+
+nav li a {
+text-decoration: none;
+color: #4B4B4B;
+}
+
+nav li a:hover{
+    text-decoration: underline;
+}
+nav li a.join {
+    color: #5a5785;
+}
+
+main {
+    max-width: 100%;
+    width: 1200px;
+    margin: 80px auto;
+    margin: 80px auto;
+    padding: 0 40px;
+    box-sizing: border-box; 
+}
+
+article h2 {
+    color: #48465c;
+    font-size: 48px;
+}
+    
+
+
+article p {
+    line-height: 2em;
+    color: #4B4B4B;
+}
+
+article p::first-line { 
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.images {
+    text-align: center;
+    margin: 80px 0;
+    white-space: nowrap;  
+}
+
+.images li {
+    display: inline-block;
+    list-style-type: none;
+    width: 40%;
+    margin: 20px 5%;
+}
+
+.images li:hover {
+    position: relative; 
+    top: -4px; 
+}
+.images li img {
+    max-width: 100%;
+}
+
+section.join {
+    background: #F4F4F4;
+    text-align: center;
+    padding: 60px 20px;
+    color: #4B4B4B;
+}
+
+section.join h2 {
+    font-size: 36px;
+}
+
+form input {
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 28px;
+    border: 4px solid white;
+}
+
+form input:focus {
+    border: 4px dashed #4B4B4B;
+    outline: none;
+}
+
+form input:valid {
+    border: 4px solid #48465c; 
+}
+
+footer{
+    background: #48465c;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Responsive with MQ*/
+
+@media screen and (max-width: 1400px) {
+    .banner .welcome h2 {
+        font-size: 50px;
+      }
+      nav li {
+          font-size: 18px;
+      }
+}
+
+@media screen and (max-width: 960px){
+    .banner .welcome h2 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .banner .welcome {
+        position: relative;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .banner .welcome br {
+          display: none;
+    }
+
+    .banner .welcome h2 {
+    font-size: 25px;
+    }
+    
+    .banner .welcome span {
+        font-size: 1em;
+    }
+    
+    nav li{
+        font-size: 18px;
+    }
+      
+    .images li{
+        width: 100%;
+        display: block; 
+        margin: 20px auto;
+    }
+}
+
+@media screen and (max-width: 560px){
+
+    .banner .welcome {
+        font-size: 20px;
+        position: relative;
+        text-align: center;
+    }
+
+    
+    .banner .welcome br {
+    display: none;
+    }
+
+    .banner .welcome span{
+    font-size: 1em;
+    }
+
+    nav li {
+    display: block;
+    width: 100%;
+    margin: 12px 0; 
+    }
+
+    article h2 {
+    font-size: 26px;
+    }
+
+    section.join > h2 {
+        font-size: 26px;
+    }
+
+    header {
+        position: sticky;
+        top: 0; 
+    }
+
+    nav {
+        position: sticky;
+        top: 94px; 
+    }
+
+}
+    
+
+
+  
+/* Video 8: Position & Layout
+Position: STATIC is the default position, that all elems have originally,
+as the position in the NORMAL DOC FLOW = how elems are displayed in the browser from top to bottom, without
+any other extra positioning. This position property: static is good - if we want to reset
+something that has been previously positioned absolute or relative, and we want to put it 
+back into normal  doc flow.
+
+header {
+    position: static;
+}
+ */
+
+ /* Position: RELATIVE - if we set smth to position RELATIVE - it means we can move it
+ relative to its original (maybe static?) position - so we can shift it right, up or down etc
+But we dont really use it like that. Relative Position is given to a parent, so that we can set the child
+to a ABSOLUTE position in relation to the relative positioned parent. 
+  header {
+    position: relative;
+    left: 100px;
+    top: 100px;
+}
+
+Position ABSOLUTE - takes that elem OUT of the normal doc flow and it will lose that 
+space that it was originally in - as the rest of the content will move up into that space*/
