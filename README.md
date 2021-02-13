@@ -1,2 +1,1 @@
-# responsive-1
-Responsive Web
+# Book Club - Responsive Web Page
